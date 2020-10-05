@@ -1,7 +1,7 @@
 ---
 name: Create an Issue
 about: 'Template following Contribution Guidelines '
-title: Problem Number | Difficulty | Language
+title: Problem Number | Title | Language
 labels: good first issue, hacktoberfest
 assignees: ''
 
