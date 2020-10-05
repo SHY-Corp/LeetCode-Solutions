@@ -48,6 +48,7 @@ We love your input! We want to make contributing to this project as easy and tra
 * Code should be properly commented to ensure it's readability.
 * If you've added code that should be tested, add tests as comments. 
 * Make sure your code properly formatted.
+* Make sure all filenames follow CamelCase
 * Issue that pull request!
 
 
