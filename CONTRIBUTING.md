@@ -64,6 +64,7 @@ When you are creating an issue, make sure it's not already present. Furthermore,
   - What you expected would happen
   - What actually happens
   - Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
+ - If you want to submit solutions in a previously unavailable language, create an Issue for it too. 
 
 
 ## License
