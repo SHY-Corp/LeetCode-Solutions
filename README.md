@@ -64,6 +64,7 @@ Check [Contribution](/CONTRIBUTING.md) Guide Before Contribution.
 
 - Create separate issues for each problem.
 - You can only work on issues that you have been assigned to.
+- Join us on [Discord](https://discord.gg/wyrPn9k)
 
 ## Authors and acknowledgment
 
