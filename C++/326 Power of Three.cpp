@@ -1,3 +1,10 @@
+
+/***
+Given an integer, write a function to determine if it is a power of three.
+
+here we write a function for the solution.
+***/
+
 class Solution {
 
 public:
