@@ -1,4 +1,4 @@
-#This code gives back every entry from the "seat"-Table but switches the ids in pairs (e.g. 1 <-> 2, 3 <-> 4, ...)
+#This code gives back every entry from the "seat"-Table but switches the ids in pairs (e.g. 1 <-> 2, 3 <-> 4, ...). The last one (if without a partner) stays itself.
 
 select 
     (case
