@@ -1,3 +1,11 @@
+/**
+ * The challenge no.215 asks for the kth largest element of an array to be returned.
+ * 
+ * To solve this problem, the array has to be sorted and then the Kth element from the top will be returned.
+ * 
+ * To save some processing time, the array only gets sorted for K elements which is slightly faster than sorting all elements.
+ */
+
 class Solution {
     public int findKthLargest(int[] nums, int k) {
         if(nums.length == 1) {
