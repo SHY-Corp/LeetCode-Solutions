@@ -1,6 +1,6 @@
 <p align="center">
 <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=100&section=header&text=LeetCode%20Solutions&fontSize=70&fontAlignY=70" /> 
-<h2 align="center">👉 A Collection of Solutions of Leetcode Problems 👈</h2>
+<h2 align="center">👉 A Collection of Solutions to Leetcode Problems 👈</h2>
 </p>
 
 <p align="center">
