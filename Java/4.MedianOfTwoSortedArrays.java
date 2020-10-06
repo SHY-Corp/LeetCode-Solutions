@@ -1,3 +1,7 @@
+// Given two sorted int arrays, returns the median value of the two.
+// The solution aggregates the two arrays together, sorts the result and
+// performs the required logic to derive the median value depending
+// on the length of the merged array being even/odd.
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int len1 = nums1.length;
