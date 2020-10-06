@@ -14,5 +14,7 @@ Marking as spam can block your account from HacktoberFest.
 - [ ] My file is in proper folder
 - [ ] I am following clean code and Documentation.
 - [ ] I have added title and what program will do first in the file
+- [ ] I have named the file as (Problem #). (Problem Title(in Camel Case)).(extension)
+      ex. 2. AddToNumbers.py
 
 ### README - [How to Contribute](https://github.com/SSKale1/LeetCode-Solutions/blob/master/CONTRIBUTING.md)

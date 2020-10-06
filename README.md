@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=666666&height=120&section=header&text=Leetcode%20Solutions&fontSize=55%&fontColor=ffffff">
-  <h2 align="center">👉 A Collection of Solutions of Leetcode Problems 👈</h2>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=100&section=header&text=LeetCode%20Solutions&fontSize=70&fontAlignY=70" /> 
+<h2 align="center">👉 A Collection of Solutions to Leetcode Problems 👈</h2>
 </p>
 
 <p align="center">
@@ -64,6 +64,7 @@ Check [Contribution](/CONTRIBUTING.md) Guide Before Contribution.
 
 - Create separate issues for each problem.
 - You can only work on issues that you have been assigned to.
+- Join us on [Discord](https://discord.gg/wyrPn9k)
 
 ## Authors and acknowledgment
 
@@ -76,4 +77,5 @@ For open-source projects, Under [MIT License](/LICENSE).
 ## Maintainers
 
 - [Shantanu Kale](https://github.com/SSKale1)
+- [Yashica Sharma](https://github.com/Yashica7)
 
