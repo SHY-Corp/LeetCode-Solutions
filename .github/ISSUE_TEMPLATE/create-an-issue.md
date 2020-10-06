@@ -30,7 +30,7 @@ Please add/delete options that are not relevant.
 
 ### Self Check 
 
-- Ask for issue assignment before making Pull Request.
+- Ask for issue assignment and wait to get assigned to it before making Pull Request.
 - Add your file in the proper folder
 - `Clean Code` and `Documentation` for better readability
 - Add `Title` and `Description` of the program in the file
