@@ -1,3 +1,7 @@
+//Given a string containing just the characters 
+//'(' and ')', find the length of the longest valid (well-formed) parentheses substring.
+//We can solve this by using the concept of stack. We will check for the top most closing brace and calculate max length.
+
 class Solution {
 public:
     int longestValidParentheses(string s) {
