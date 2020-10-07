@@ -1,0 +1,26 @@
+int findFirstMissingPositive(int[] nums)
+{
+    for(int i = 1 ; i <= nums.length ; i++)
+    {
+        while (nums[i-1] != i)
+        {
+            int temp = nums[i-1];
+            if (temp-1 < 0 ||
+                temp-1 >= nums.length ||
+                nums[temp-1] == temp)
+            {
+                break;
+            }
+
+            nums[i-1] = nums[temp-1];
+            nums[temp-1] = temp;
+        }
+    }
+
+    for(int i = 1 ; i <= nums.length ; i++)
+    {
+        if (nums[i-1] != i) return i;
+    }
+
+    return nums.length;
+}
