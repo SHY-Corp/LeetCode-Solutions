@@ -22,32 +22,32 @@ class Solution
 {
 	public:
     	node *detectCycle(node *head)
-		{
+	{
 	        node *slow,*fast;
-			bool flag=1;
+		bool flag=1;
 	        if(head==NULL)
-				return NULL;
+		   return NULL;
 	        slow=head;
-			fast=head;
+		fast=head;
 	        while(slow and fast and fast->next)
 	        {
-				slow=slow->next;
+			slow=slow->next;
 	        	fast=fast->next->next;
 	        	if(slow==fast)
-				{
-	            	flag=0;break;
+			{
+	            	   flag=0;break;
 	        	}
-			}
+		}
 	        if(!flag)
 	        {
 	            slow=head;
 	            while(slow!=fast)
 	            {
 	                slow=slow->next;
-					fast=fast->next;
-				}
+			fast=fast->next;
+		    }
 	            return slow;
-			}		
+		}		
 	        else
 	        {
 	            return NULL;
