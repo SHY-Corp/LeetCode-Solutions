@@ -1,3 +1,4 @@
+// Motive of this code is to find the numbers which are not arranged in a systematic manner and arrange them and till the last iteration to find the number which is arranged according to the code 
 int findFirstMissingPositive(int[] nums)
 {
     for(int i = 1 ; i <= nums.length ; i++)
