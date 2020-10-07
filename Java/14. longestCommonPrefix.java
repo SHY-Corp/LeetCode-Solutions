@@ -23,6 +23,12 @@ Constraints:
 strs[i] consists of only lower-case English letters.   */
 
 //Solution
+//The idea is to apply binary search method to find the string with maximum value L, 
+//which is common prefix of all of the strings. The algorithm searches space is the interval (0…minLen), 
+//where minLen is minimum string length and the maximum possible common prefix. 
+//Each time search space is divided in two equal parts, one of them is discarded,because it is sure that it doesn't contain the solution. There are two possible cases:
+//(A) S[1...mid] is not a common string. This means that for each j > i S[1..j] is not a common string and we discard the second half of the search space.
+//(B) S[1...mid] is common string. This means that for for each i < j S[1..i] is a common string and we discard the first half of the search space, because we try to find longer common prefix.
 class Solution {
    public String longestCommonPrefix(String[] strs) {
     if (strs == null || strs.length == 0)
