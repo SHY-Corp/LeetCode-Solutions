@@ -1,5 +1,8 @@
 class Solution {
+  //In this program we are using dynamic programming
+  // We are using this approach because we need to remember the outputs for lower cases also.
     public boolean winnerSquareGame(int n) {
+      //Checking for the base cases
         if(n<=4){
             if(n==1||n==3||n==4){
             return true;
@@ -7,10 +10,12 @@ class Solution {
                 return false;
             }
         }
+        //Check if the given number has a perfect square root
         if(Math.sqrt(n)-(int)Math.sqrt(n)==0){
             return true;
         }
-
+        //Array to store values obtained for different cases
+        //Performing dynamic programming
         boolean[] arr=new boolean[n];
         arr[0]=true;
         arr[1]=false;
