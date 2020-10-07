@@ -38,6 +38,9 @@ class Solution {
 		If low is equal to length of the array, it means that target is not found and it is definitely bigger than last element in the array. So, return low.
 		If value at index low is lower than target, return low+1
 		Else, return low.
+
+		Time Complexity: O(log(n)) where n is size of the array
+		Space Complexity: O(1)
 	*/
     public int searchInsert(int[] nums, int target) {
         
