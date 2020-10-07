@@ -1,3 +1,5 @@
+#This program takes in a number, reverses it and then returns it as the output.
+
 class Solution(object):
     def reverse(self, x):
         """
