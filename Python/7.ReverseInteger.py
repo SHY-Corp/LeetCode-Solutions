@@ -4,6 +4,8 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
+        
+        #get positive number irrespestive of the original sign
         if x>0:
             n = x
         else:
@@ -15,9 +17,11 @@ class Solution(object):
             c = c*10 + r
             n = n // 10
         
+        #reset value to 0 if answer exceeds the constraint
         if c>((2**31)-1):
             c=0
        
+        #return the answer with the original sign
         if x>0:
             return c
         else:
