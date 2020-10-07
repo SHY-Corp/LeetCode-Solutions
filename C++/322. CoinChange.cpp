@@ -14,16 +14,16 @@ public:
     int coinChange(vector<int>& coins, int amount) {
         int t[coins.size()+1][amount+1];
         for(int i=0;i<=coins.size();i++){
-            t[i][0] = 0;
+            t[i][0] = 0;//If the amount of money, we require no coin to distribute it. So, the answer is 0.
         }
         for(int i=0;i<=amount;i++){
-            t[0][i] = INT_MAX-1;
+            t[0][i] = INT_MAX-1;//If the amount of money is non-zero and we do not have any coins of a particular denomination,we can't partition it, in other words,there will be infinite number of coins required.
         }
         for(int i=1;i<=coins.size();i++){
             for(int j=1;j<=amount;j++){
-                if(coins[i-1]<=j){
+                if(coins[i-1]<=j){//If we can use that coin
                     t[i][j] = min(1+t[i][j-coins[i-1]],t[i-1][j]);
-                }else{
+                }else{//If we cannot use it
                     t[i][j] = t[i-1][j];
                 }
             }
