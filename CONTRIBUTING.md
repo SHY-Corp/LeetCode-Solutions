@@ -18,14 +18,14 @@ We love your input! We want to make contributing to this project as easy and tra
 ### Making a PR
 
 > - Make sure you have been assigned the issue to which you are making a PR.
-> - If you make PR before being assigned, It will be labeled `invalid` and closed without merging.
+> - If you make PR before being assigned, It will be labelled `invalid` and closed without merging.
 
 * Fork the repo and clone it on your machine.
-* Add a upstream link to main branch in your cloned repo
+* Add an upstream link to the main branch in your cloned repo
     ```
     git remote add upstream https://github.com/SSKale1/LeetCode-Solutions.git
     ```
-* Keep your cloned repo upto date by pulling from upstream (this will also avoid any merge conflicts while committing new changes)
+* Keep your cloned repo up to date by pulling from upstream (this will also avoid any merge conflicts while committing new changes)
     ```
     git pull upstream master
     ```
