@@ -1,3 +1,7 @@
+/*Description of FloodFill algorithm - We are given an image(2d vector) and starting pixel we have to change the colour of the starting pixel,
+plus any pixels connected 4-directionally to the starting pixel of the same color as the starting pixel, plus any pixels connected
+4-directionally to those pixels (also with the same color as the starting pixel), and so on to the new colour which is given in the input.*/ 
+
 class Solution {
 public:
     
