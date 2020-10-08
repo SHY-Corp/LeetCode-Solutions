@@ -1,4 +1,5 @@
-# a class to hold the solution to our problem
+# Function findPeakElement finds receives an array
+# and searches for an element considered a peak (greater than its neighbors )
 class Solution(object):
 
     def findPeakElement(self, arr):
