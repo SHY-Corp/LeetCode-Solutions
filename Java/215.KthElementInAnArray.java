@@ -6,33 +6,21 @@
  * To save some processing time, the array only gets sorted for K elements which is slightly faster than sorting all elements.
  */
 
+//Solving this question using a min heap of size K.
+//We start adding elements in the priority queue and when the size exceeds K we pop the topmost element(minimum element).
+//This way when we are done inserting all the array elements in the priority queue and simultaneously popping according to priority,
+//At the end, we are left with a priority queue of size K and the topmost element is the Kth largest.
 class Solution {
     public int findKthLargest(int[] nums, int k) {
-        if(nums.length == 1) {
-            return nums[0];
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for(int ele: nums)
+        {
+            pq.add(ele);
+            if(pq.size()>k)
+                pq.remove();
         }
-
-        for (int indexA = 0; indexA <= k; indexA++) {
-            for (int indexB = 0; indexB < nums.length - 1; indexB++) {
-                if (nums[indexB] > nums[indexB + 1]) { 
-                    swap(nums, indexB, indexB + 1);
-                }
-            }
-        }
-
-        return nums[nums.length - k];
+        
+        return pq.peek();
     }
 
-    /**
-     * Swaps the values at the given indices in the array.
-     * 
-     * @param in
-     * @param indexA
-     * @param indexB
-     */
-    public void swap(int[] in, int indexA, int indexB) {
-        int tmp = in[indexB];
-        in[indexB] = in[indexA];
-        in[indexA] = tmp;
-    }
-}
+   
