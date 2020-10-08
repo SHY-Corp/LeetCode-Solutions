@@ -1,3 +1,6 @@
+//If k==0,check how many number of elements are repeated
+/*Else for each unique number num in the set of given integers check whether num+k is present.If it is there,then increment finalval*/
+
 class Solution {
 public:
     int findPairs(vector<int>& nums, int k) {
