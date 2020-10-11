@@ -71,11 +71,11 @@ public:
                     dp[i][j] = dp[i][j-1] + dp[i+1][j] - dp[i+1][j-1]; //edge chars does not mach... 
                 }                                                      // in case abcd,i=0,j=3, dp[0][2] = 3, dp[1][3] = 3, dp[1][2] = 2...so, dp[0][3] = 3 + 3 - 2(a, b, c, d)
 
-                // just safe..as we are subtracting..
+                // just safe..as we are subtracting..earlier in code 
                 if(dp[i][j]<0)
                     dp[i][j]+=1000000007;
-                // ans could be very big
-                dp[i][j]=dp[i][j]%1000000007;
+                
+                dp[i][j]=dp[i][j]%1000000007; // ans could be very big
                                   
             }
             
