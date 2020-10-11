@@ -1,5 +1,5 @@
-*
-* File     : Group_Anagrams.cpp
+/*
+File     : Group_Anagrams.cpp
 The solution involves 2 steps:
 
 Sort the element and make it as the key.
