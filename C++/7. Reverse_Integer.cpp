@@ -1,5 +1,4 @@
-
-/* program name :- Reverse_Integer.cpp
+/* Program name :- Reverse_Integer.cpp
  this program will receive any 3 digit number whether it is positive or negative and convert it into its reversed form or reverse its digits ,
  and this program also works if the situation overflows.
 */
