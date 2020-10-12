@@ -5,7 +5,10 @@
  * 
  * To save some processing time, the array only gets sorted for K elements which is slightly faster than sorting all elements.
  */
-//used a priority queue to find the solution
+//Solving this question using a min heap of size K.
+//We start adding elements in the priority queue and when the size exceeds K we pop the topmost element(minimum element).
+//This way when we are done inserting all the array elements in the priority queue and simultaneously popping according to priority,
+//At the end, we are left with a priority queue of size K and the topmost element is the Kth largest.
 class Solution {
     public int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
@@ -17,7 +20,5 @@ class Solution {
         }
         
         return pq.peek();
-    }
-
-   
+    }   
 }
