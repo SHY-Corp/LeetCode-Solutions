@@ -5,7 +5,6 @@
  * 
  * To save some processing time, the array only gets sorted for K elements which is slightly faster than sorting all elements.
  */
-
 //Solving this question using a min heap of size K.
 //We start adding elements in the priority queue and when the size exceeds K we pop the topmost element(minimum element).
 //This way when we are done inserting all the array elements in the priority queue and simultaneously popping according to priority,
@@ -21,6 +20,5 @@ class Solution {
         }
         
         return pq.peek();
-    }
-
-   
+    }   
+}
