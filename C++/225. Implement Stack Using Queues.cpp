@@ -5,32 +5,82 @@
 
 
 
-Queue<Integer> queue
-ALGORITHM constructor
-    this.queue = a new Queue object storing Integer
-ALGORITHM push(x)
-    queue.push(x)
-ALGORITHM pop()
-    // if we pop directly from queue, the element won't be on top of our "stack", so need a way to get the latest added element
-    tmp = a new Queue object storing Integer
-    // push everything in queue to tmp except the last one
-    while (queue.size() > 1) {
-        tmp.push(queue.pop())
-    }
-    // pop the remaining element out from the queue
-    stack_pop = queue.pop()
-    // simply switch reference
-    this.queue = tmp
-    return stack_pop
-ALGORITHM top()
-    // very much similar to pop()
-    tmp = a new Queue object storing Integer
-    while (queue.size() > 1) {
-        tmp.push(queue.pop())
-    }
-    stack_top = queue.top()
-    tmp.push(queue.pop())
-    this.queue = tmp
-    return stack_top
-ALGORITHM empty()
-    return queue.empty()
+using namespace std; 
+  
+class Stack { 
+    // Two inbuilt queues 
+    queue<int> q1, q2; 
+  
+    // To maintain current number of 
+    // elements 
+    int curr_size; 
+  
+public: 
+    Stack() 
+    { 
+        curr_size = 0; 
+    } 
+  
+    void push(int x) 
+    { 
+        curr_size++; 
+  
+        // Push x first in empty q2 
+        q2.push(x); 
+  
+        // Push all the remaining 
+        // elements in q1 to q2. 
+        while (!q1.empty()) { 
+            q2.push(q1.front()); 
+            q1.pop(); 
+        } 
+  
+        // swap the names of two queues 
+        queue<int> q = q1; 
+        q1 = q2; 
+        q2 = q; 
+    } 
+  
+    void pop() 
+    { 
+  
+        // if no elements are there in q1 
+        if (q1.empty()) 
+            return; 
+        q1.pop(); 
+        curr_size--; 
+    } 
+  
+    int top() 
+    { 
+        if (q1.empty()) 
+            return -1; 
+        return q1.front(); 
+    } 
+  
+    int size() 
+    { 
+        return curr_size; 
+    } 
+}; 
+  
+// Driver code 
+int main() 
+{ 
+    Stack s; 
+    s.push(1); 
+    s.push(2); 
+    s.push(3); 
+  
+    cout << "current size: " << s.size() 
+         << endl; 
+    cout << s.top() << endl; 
+    s.pop(); 
+    cout << s.top() << endl; 
+    s.pop(); 
+    cout << s.top() << endl; 
+  
+    cout << "current size: " << s.size() 
+         << endl; 
+    return 0; 
+} 
