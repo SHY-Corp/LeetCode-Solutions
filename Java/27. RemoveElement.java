@@ -6,7 +6,7 @@ class Solution {
     }
 
     public int removeElement(int[] nums, int val) {
-        int i = 0;              //declaration variable
+        int i = 0;              // declaration variable
         int len = nums.length;  //declaration array lenght
 
         for(int j = 0; j < nums.length; j++){  //go through the array elements with the for loop
