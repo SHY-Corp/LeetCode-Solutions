@@ -1,12 +1,13 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=666666&height=120&section=header&text=Leetcode%20Solutions&fontSize=55%&fontColor=ffffff">
-  <h2 align="center">👉 A Collection of Solutions of Leetcode Problems 👈</h2>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=100&section=header&text=LeetCode%20Solutions&fontSize=70&fontAlignY=70" /> 
+<h2 align="center">👉 A Collection of Solutions to Leetcode Problems 👈</h2>
 </p>
 
 <p align="center">
 <img src="https://img.shields.io/badge/language-Python-blue?style=for-the-badge">
 <img src="https://img.shields.io/badge/language-C++-blue?style=for-the-badge">
 <img src="https://img.shields.io/badge/language-Java-blue?style=for-the-badge">
+<img src="https://img.shields.io/badge/language-SQL-blue?style=for-the-badge">
  </p>
 <p align="center">
 <img src="https://img.shields.io/github/issues-raw/SSKale1/LeetCode-Solutions?style=for-the-badge" >
@@ -24,7 +25,7 @@
 ## Introduction
 
 Leetcode is a Website where programmers practise their Coding Skills. It has over 1500 Problems and growing. Its premium version is fairly popular as it helps to practise coding for interviews of various organizations.
-This Repo Aims to have the solutions to all the problems on Leetcode and serve as a reference to everyone new to the platform.
+This Repo aims to have the solutions to all the problems on Leetcode and serve as a reference to everyone new to the platform.
 
 :star2: Star it 
 :fork_and_knife:Fork it
@@ -35,6 +36,7 @@ This Repo Aims to have the solutions to all the problems on Leetcode and serve a
 - Python
 - C++
 - Java
+- SQL
 
 ## Support
 
@@ -77,4 +79,5 @@ For open-source projects, Under [MIT License](/LICENSE).
 ## Maintainers
 
 - [Shantanu Kale](https://github.com/SSKale1)
+- [Yashica Sharma](https://github.com/Yashica7)
 
