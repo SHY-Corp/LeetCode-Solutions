@@ -1,7 +1,7 @@
 //Return the minimum number of students that must move in order for all students to be standing in non-decreasing order of height.
 //Make a copy of the array, sort the copy and comapre it with the actual array
 
-class Solution {
+class Solution { // Class is defined for height_checking.
 public:
     int heightChecker(vector<int>& heights) {
         vector<int>arr;
