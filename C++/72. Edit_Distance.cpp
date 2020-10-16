@@ -13,8 +13,8 @@ public:
     int edit(string word1,string word2,int m,int n)
     {
        // cout<<m<<" "<<n<<"/";
-        if(m==0)return n;
-        if(n==0)return m;
+        if(m==0) return n;
+        if(n==0) return m;
         if(dp[m][n]!=-1)
             return dp[m][n];
         if(word1[m-1]==word2[n-1])
