@@ -1,0 +1,11 @@
+class Solution:
+    def runningSum(self, nums):
+        ans=[]
+        tmp=0
+        for i in nums:
+            tmp+=i
+            ans.append(tmp)
+        return ans
+        # nums is the user input
+        #tmp is variable
+        #ans will be solution
