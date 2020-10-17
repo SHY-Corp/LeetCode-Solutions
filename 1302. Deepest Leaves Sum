@@ -1,0 +1,29 @@
+int deepestLeavesSum(TreeNode* root) {
+    if(!root)
+        return 0;
+    int sum;
+    queue<TreeNode*> q;
+    q.push(root);
+    
+    while(!q.empty())
+    {
+        sum=0;
+        
+        int nc = q.size();
+        
+        while(nc > 0)
+        {
+            TreeNode* temp = q.front();
+            q.pop();
+            sum+=temp->val;
+            
+            if(temp->left)
+                q.push(temp->left);
+            if(temp->right)
+                q.push(temp->right);
+            nc--;
+        }
+    }
+    
+    return sum;
+}
