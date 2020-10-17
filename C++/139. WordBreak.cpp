@@ -17,13 +17,16 @@ class Solution {
 public:
     unordered_map<string,bool> mp;
     
-    bool startwith(string s,string t){
+    bool startwith(string s,string t)
+    {
         int i=0,j=0;
         if(t.length()>s.length())
             return false;
         
-        while(j<t.length()){
-            if(s[i]!=t[j]){
+        while(j<t.length())
+        {
+            if(s[i]!=t[j])
+            {
                 return false;
             }
             i++;
@@ -33,20 +36,24 @@ public:
         return true;
     }
     
-    bool wb_utils(string s,vector<string>& wordDict){
+    bool wb_utils(string s,vector<string>& wordDict)
+    {
         if(s=="")
             return true;
         
         if(mp.find(s)!=mp.end())
             return mp[s];
         
-        for(int i=0;i<wordDict.size();i++){
+        for(int i=0;i<wordDict.size();i++)
+        {
         	
-            if(startwith(s,wordDict[i])){
-    			//ut<<wordDict[i]<<endl;         
+            if(startwith(s,wordDict[i]))
+            {
+    			                                                   //ut<<wordDict[i]<<endl;         
                 string nxt = s.substr(wordDict[i].length());
                 
-                if(wb_utils(nxt,wordDict)){
+                if(wb_utils(nxt,wordDict))
+                {
                     mp[s] = true;
                     return true;
                 }
@@ -56,8 +63,9 @@ public:
         return mp[s] = false;
     }
     
-    bool wordBreak(string s, vector<string>& wordDict) {
-        //m.insert(make_pair("",1));
+    bool wordBreak(string s, vector<string>& wordDict)
+    {
+                                                                      //m.insert(make_pair("",1));
         return wb_utils(s,wordDict);
     }
 };
