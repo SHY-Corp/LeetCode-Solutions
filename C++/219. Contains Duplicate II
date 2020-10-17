@@ -1,0 +1,29 @@
+/**
+ * Solution to 219. Contains Duplicate II at LeetCode in C++
+ *
+ * author: Ishaan Srivastav
+ * ref: https://leetcode.com/problems/contains-duplicate-ii/
+ */
+
+
+class Solution {
+public:
+    bool containsNearbyDuplicate(vector<int>& nums, int k) {
+        unordered_set<int> s;
+        int n = nums.size();
+        if(k>n)
+            k = n;
+        else if(k<=0)
+            return false;
+        for(int i = 0;i<n;i++){
+            if(i>k){
+                s.erase(nums[i-k-1]);
+            }
+            //checking if same number has already been deleted at distance <=k
+            if(s.find(nums[i])!=s.end())
+                return true;
+            s.insert(nums[i]);
+        }
+        return false;
+    }
+};
