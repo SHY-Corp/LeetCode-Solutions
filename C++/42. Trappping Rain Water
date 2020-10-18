@@ -1,0 +1,75 @@
+/*
+Aim : Find the max water that can be conatained in given bars
+
+Soln : 
+    Basic obervation is that we are constrainted by the min of 2 bars
+    
+    3 Pass > O(n) Time and O(n) Space
+    
+    in left array we keep the max of cuurent bar and previous bar, while going from left > right
+    in right array we do the same , while going from right > left
+    
+    then while going fro left > right 
+        we find the min of left and right array and then subtract the height of cur bar and add it to ans. 
+*/
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        
+        int res = 0;
+        int n = height.size();
+        if(!n)
+            return res;
+        
+        vector<int> left(n, 0), right(n, 0);
+        
+        left[0] = height[0];
+        for(int i = 1; i < n; i++)
+            left[i] = max(left[i-1], height[i]);
+        
+        right[n-1] = height[n-1];
+        for(int i = n-2; i > -1; i--)
+            right[i] = max(right[i+1], height[i]);
+        
+        for(int i = 0; i < n; i++)
+            res += min(left[i], right[i])-height[i];
+        
+        return res;
+    }
+};
+
+/*
+    1 Pass > O(n) Time and O(1) Space
+    
+    lvl : tracks he level which water will not stay above this but stay below this. So if lower is less than level we will have water accumulation.
+    
+    low : This is the floor of the moment. Moment basically is either left side or right side. We are either looking at the left pointer or right pointer. Whichever is lower.
+
+    if 'l' or 'r' hit max they will get stuck there till the end of the loop and the other pointer will move toward them. 
+    
+}
+*/
+
+class Solution {
+public:
+    int trap(vector<int>& height) {
+       
+        int l = 0, r = height.size()-1, lvl = 0, water = 0;
+        
+        while (l < r) {
+            int low;
+            
+            if(height[l] < height[r])
+                low = height[l++];
+            else
+                low = height[r--];
+            
+            lvl = max(lvl, low);
+            water += lvl - low;
+        }
+        return water;
+    }
+};
+
+
+
