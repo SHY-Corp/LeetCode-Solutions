@@ -1,0 +1,19 @@
+int climbStairs(int n) {
+       vector<int> dp(n+1, 0);
+       //Using dynamic programming here to store the results of the subproblems in the vector dp and then using them to get to bigger problem.
+       //Base case
+        if(n == 0 || n == 1)
+        {
+            return 1;
+        }
+        dp[0] =1;
+        dp[1] = 1;
+        dp[2] = 2;
+        //There are two ways to reach a particular number i, we can either reach it from i-1 or i-2 so adding the possibilities of both.
+        for(int i=3;i<=n;i++)
+        {
+            dp[i] = dp[i-1]+dp[i-2];
+        }
+
+        return dp[n];
+    }
