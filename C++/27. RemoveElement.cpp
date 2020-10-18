@@ -1,3 +1,6 @@
+/* Program name :- Remove Element.cpp
+ this program will receive an array of integers, and a value. Count the number of integers in the array after deleting all elements whose value is val.
+*/
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
