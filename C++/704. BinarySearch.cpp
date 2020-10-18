@@ -18,14 +18,18 @@ Output: -1
 Explanation: 2 does not exist in nums so return -1
 */
 
+#include<iostream>
+#include<algorithm>
+#include<vector>
+using namespace std;
 class Solution {
 public:
-    int search(vector<int>& nums, int target) {
+    int search(std::vector<int>& nums, int target) {
         int _size = nums.size();
         int _left = 0;
         int _right = _size-1;
-        
         int _middle;
+        //sort(nums.begin(),nums.end());  // use this (uncomment) if not sure whether the input is sorted or not.
         while(_left <= _right)
         {
             _middle = (_left+_right)/2;
@@ -40,3 +44,13 @@ public:
         return -1;
     }
 };
+
+int main(){
+    
+    Solution s;                             //creating the object
+	std::vector<int>vec={-1,0,3,5,9,12};    //initialize vector
+	int key;                                //initialize key
+	cin>>key;                               //taking input for the value to be searched
+	cout<<s.search(vec,key);                //calling the search function
+	return 0;
+}
