@@ -1,0 +1,57 @@
+/*
+Aim : Design a ds that folllows the rules of Lest Recently Used(LRu) Cache.
+
+To Do : We have to keep track of least recently used item in cache.
+        i.e.,
+        1. When we access an item from cache, it moves to front of the list
+        2. When we remove an item, it will be removes from the end of the list.
+        3. When we insert a item, it will be inserted to front of the list
+
+Soln : We use a combination of map and list( it basically a doubly linked list, more like th elist from python)
+       splice is a inbuilt stl function of list that takes an element (here, at mp[key]) an dplaces it at the beginning of the list.
+       
+       Note : This soln is also an answer for the follow up ques
+            i.e., to do get(), put() function in O(1) timr
+*/
+class LRUCache {
+public:
+    
+    list<pair<int, int>> l;
+    unordered_map<int, list<pair<int, int>>::iterator> mp;
+    int sz;
+    
+    LRUCache(int capacity) {
+        sz = capacity; 
+    }
+    
+    int get(int key) {
+        if(mp.find(key) == mp.end())    // not found
+            return -1;
+        l.splice(l.begin(), l, mp[key]);    // insert in the beginning
+        return mp[key]->second;     //
+    }
+    
+    void put(int key, int value) {
+        if(mp.find(key) != mp.end()){   // if not found in map
+            l.splice(l.begin(), l, mp[key]);    // put it in the beginnning
+            mp[key]->second = value;
+            return;
+        }
+        
+        if(l.size() == sz){     // cache capacity reached
+            auto k = l.back().first;
+            l.pop_back();   // remove the least recently used item( item at the end)
+            mp.erase(k);    // remove the value from the map
+        }
+        
+        l.push_front({key, value}); // as it is newly added put it in front
+        mp[key] = l.begin();    
+    }
+};
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache* obj = new LRUCache(capacity);
+ * int param_1 = obj->get(key);
+ * obj->put(key,value);
+ */
