@@ -1,0 +1,54 @@
+/*
+Aim : Find the no of connected(not diagonally)  1's in binary matrix.
+
+Soln : traverse the matrix , 
+    if 1 is encountered 
+        increase the count and make it 0.
+        then run dfs for all adjacent cells and mark them 0 as well.
+    repeat for all remaining 1.
+    
+    return cnt
+*/
+
+
+class Solution {
+public:
+    
+    // directions to move along 
+    vector<pair<int, int>> dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};   
+    
+    
+    void dfs(vector<vector<char>>& grid, int i, int j){
+        
+        // check for boundary condition and whether it is water 
+        if(i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || grid[i][j] == '0')
+            return;
+        
+        grid[i][j] = '0';
+        
+        // check for all adjacent cells
+        for(auto dir : dirs)
+            dfs(grid, i + dir.first, j + dir.second);
+    }
+    
+    int numIslands(vector<vector<char>>& grid) {
+        
+        const int row = grid.size();
+        if(!row)
+            return 0;
+        
+        const int col = grid[0].size();
+        int cnt = 0;
+        
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                if(grid[i][j] == '1'){
+                    cnt++;
+                    dfs(grid, i, j);
+                }
+            }
+        }
+        
+        return cnt;
+    }
+};
