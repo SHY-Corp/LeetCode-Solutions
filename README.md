@@ -24,7 +24,7 @@
 
 ## Introduction
 
-Leetcode is a Website where programmers practise their Coding Skills. It has over 1500 Problems and growing. Its premium version is fairly popular as it helps to practise coding for interviews of various organizations.
+Leetcode is a Website where programmers practise their Coding Skills. It has over 1500 Problems and growing. Its premium version is fairly popular, as it helps to practise coding for interviews of various organizations.
 This Repo aims to have the solutions to all the problems on Leetcode and serve as a reference to everyone new to the platform.
 
 :star2: Star it 
@@ -74,7 +74,7 @@ Show your appreciation to those who have contributed to the project.
 
 ## [License](/LICENSE)
 
-For open-source projects, Under [MIT License](/LICENSE).
+For open-source projects, under [MIT License](/LICENSE).
 
 ## Maintainers
 
