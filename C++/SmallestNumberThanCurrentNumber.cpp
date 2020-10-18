@@ -1,4 +1,4 @@
-//This program gives the number of smallest numbers in the given array
+//This program gives the number of smallest numbers in the given array.
 //It uses binary search tree.
 //Here we traverse the input array from the ending to the beginning and add the elements into the BST.
 
