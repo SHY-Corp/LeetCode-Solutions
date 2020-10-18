@@ -26,7 +26,7 @@ def int_(s):
     """
     reslt = 0
     for i in s:
-        if ord(i) in range(48,58):
+        if ord(i) in range(48,58):  # checks that string character is something in [0-9]
             reslt = reslt*10 + (ord(i) - ord('0'))
         else:
             raise ValueError
