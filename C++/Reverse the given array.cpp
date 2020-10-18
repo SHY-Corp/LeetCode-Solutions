@@ -1,3 +1,6 @@
+/*Reverse the given array , imput will be in form of number of test cases you want to go for and array size for each test case in next line
+ with space seprated elements of the array in next line. */
+
 #include <iostream>
 using namespace std;
 
