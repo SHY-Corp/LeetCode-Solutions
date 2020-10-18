@@ -12,7 +12,7 @@ public:
                 4 -> 4 > nums.size() (i.e. 3). Therefore, we skip.
         Now, we traverse the array again and return the smallest element that is not in its correct place.
         */
-        
+        int flag =1;
         //Base case
         if(nums.size() == 0) return 1;
         
@@ -24,6 +24,7 @@ public:
         
         //Finally, identify the smallest number that is out of place.
         for(int i = 0; i < nums.size(); i++){
+            flag = 0;
             if(nums[i] != i+1) return i+1;
         }
         return nums.size() + 1;
