@@ -3,7 +3,7 @@
 // Implementation
 class Solution {
 public:
-    string intToRoman(int num) {    // num is considered as number
+    string intToRoman(int num) {    // num is considered as number 
         string roman = "";  // Taken a empty string which stores the roman
         
         while(num != 0){  //checks if the number is not equal to 0, if it is not equal then there is more processing to be done
