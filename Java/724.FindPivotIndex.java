@@ -1,6 +1,8 @@
 // Problem Link: https://leetcode.com/problems/find-pivot-index/
+// Given a array nums[], we need to find the leftmost pivot index
+//a pivot index is one where the sum of all the numbers to the left of the index is equal to the sum of all the numbers to the right of the index.
 
-/* Solution idea:
+/*Solution idea:
 1. For a particular index i, if prefix sum till (i-1)th index equal to suffix sum till (i+1)th index, then we found our pivot index i
 
 2. First check if the 0th index is the pivot index because we need to find out the leftmost pivot index
@@ -13,6 +15,7 @@
    eg: nums[]=[2,6,-8,1]
         pre[]=[2,8,0,1]
 */
+
 class Solution {
     public int pivotIndex(int[] nums) {
         int n=nums.length;//length of array
