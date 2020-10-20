@@ -23,37 +23,37 @@ class Solution {
         if (nums.length == 1)
             return nums [0];
 
-        int l = 0, r = nums.length - 1;
+        int left = 0, right = nums.length - 1;
 
         //base case where first elt is the singleNonDuplicate
-        if (nums [l] != nums [l + 1])
-            return nums [l];
+        if (nums[left] != nums[left + 1])
+            return nums[left];
 
         //base case where last elt is the singleNonDuplicate
-        if (nums [r] != nums [r - 1])
-            return nums [r];
+        if (nums[right] != nums[right - 1])
+            return nums[right];
 
-        l++;
-        r--;
+        left++;
+        right--;
 
-        while (l <= r) {
+        while (left <= right) {
 
-            int mid = l + (r - l) / 2;
+            int mid = left + ((right - left) / 2);
 
-            if (nums [mid] != nums [mid - 1] && nums [mid] != nums [mid + 1])
-                return nums [mid];
+            if (nums[mid] != nums[mid - 1] && nums[mid] != nums[mid + 1])
+                return nums[mid];
 
             if (mid % 2 == 0) {
-                if (nums [mid] == nums [mid + 1])
-                    l = mid + 2;
+                if (nums[mid] == nums[mid + 1])
+                    left = mid + 2;
                 else
-                    r = mid;
+                    right = mid;
             }
             else {
-                if (nums [mid] == nums [mid - 1])
-                    l = mid + 1;
+                if (nums[mid] == nums[mid - 1])
+                    left = mid + 1;
                 else
-                    r = mid - 1;
+                    right = mid - 1;
             }
         }
         return -1;
