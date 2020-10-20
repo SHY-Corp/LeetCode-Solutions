@@ -1,4 +1,5 @@
-# Given a roman numeral, convert it to an integer.
+# This program converts the entered roman number to integer .
+# We have used the dictionary to ease the input for the desired roman representation of an integer.
 
 
 class Solution(object):
