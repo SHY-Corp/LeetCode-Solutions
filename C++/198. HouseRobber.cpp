@@ -10,30 +10,25 @@ Given a list of non-negative integers representing the amount of money of each
 house, determine the maximum amount of money you can rob tonight without
 alerting the police.
 
-For Example :
+For Examples :
 
 Input: nums = [1,2,3,1]
 Output: 4
 Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
              Total amount you can rob = 1 + 3 = 4.
+
+Input: nums = [2,7,9,3,1]
+Output: 12
+Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
+             Total amount you can rob = 2 + 9 + 1 = 12.
+         
+Input: nums = [2,1,1,2]
+Output: 4
+Explanation: Rob house 1 (money = 2)and then rob house 4 (money = 2).
+             Total amount you can rob = 2 + 2 = 4.         
+
 */
-/*class Solution {
-public:
-    int rob(vector<int>& nums) {
-        int odds = 0;
-        int evens = 0;
-        for (int i = 0; i < std::size(nums); i++) {
-            if (i % 2) {
-                evens += nums[i];
-            } else {
-                odds += nums[i];
-            }
-        }
-        return std::max(odds, evens);
-    }
-};*/
-// this code note work in if nums=[2,1,1,2]  your output was come 3 and expected output was 4
-//below code was right
+
 class Solution {
 public:
    int rob(vector<int>& nums) {
