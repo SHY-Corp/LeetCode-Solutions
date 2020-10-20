@@ -4,13 +4,17 @@
 
 class Solution(object):
 
-    def PascalsTriangle(self, num):
+    def generate(self, num):
         """
         creates a two dimensional array holding a pascal triangle of
         the desired height
         :param num: int the height of the triangle
         :return: List[List[int]] a matrix of the pascal triangle
         """
+        
+        # when the num is zero, return an empty list
+        if num == 0:
+            return []
 
         # the base of the triangle
         return_triangle = [[1]]
