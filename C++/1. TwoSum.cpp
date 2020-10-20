@@ -11,7 +11,7 @@ public:
             
             for(int j=i+1; j<nums.size(); j++) {        //inner loop  1 --> size of vector nums
                 
-                if(nums[i]+nums[j]==target && i!=j)   
+                if(nums[i]+nums[j]==target)   
                     return vector<int> {i,j};         // return vector of i and j if condition satisfies
                     
             }
