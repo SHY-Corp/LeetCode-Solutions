@@ -9,24 +9,40 @@
             1 <= arr.length <= 100
             1 <= arr[i] <= 1000
 
-    Approach:
-            Create a window of odd length , in each window take the sum uptil the window size. For first outermost loop iteration
-            the size is 1 henceafter 3 , 5 , 7 and so on. We basically enumerate all possible odd length subarrays.
-
 */
+
+// Using the concept of continous sum ......
 
 class Solution {
 public:
     int sumOddLengthSubarrays(vector<int>& arr) {
-        long long sum=0;
-        int n= arr.size();
-        for(int win = 1; win<=n ; win+=2){
-            for(int i=0; i < n-win+1; i++){
-                for(int j=i; j<i+win; j++){
-                    sum += arr[j];
-                }
-            }
-        }
-        return sum;
+        
+    int ans =arr[0];        
+    
+    for(int i=1;i<arr.size();i++)
+    { 
+      ans += arr[i];                // add all the value with odd length of 1
+      arr[i] += arr[i-1];           // arr[i] store the sum of all the values from ith index to 0. (i.e continous sum)
+      
+    }
+        
+    int trace = arr.size()/2 , i=2;   // trace the number of different odd length group minus 1  (i.e for arr.size = 5 there will be 3 group => odd_length = {1,3,5})
+        
+    while(trace--)
+    {
+        int j=i, it = -1;
+     
+    while(j<arr.size())
+    { 
+    ans += it>=0?arr[j]-arr[it]:arr[j];    // add all the elements from odd length group to ans var.  
+         
+     it++;
+     j++;  }
+        
+     i+=2;
+    }
+    
+    return ans;
+       
     }
 };
