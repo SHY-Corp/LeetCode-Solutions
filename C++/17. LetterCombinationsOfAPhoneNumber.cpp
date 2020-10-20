@@ -1,4 +1,4 @@
-// Problem-22 Letter Combinations of a Phone Number
+// Problem-17 Letter Combinations of a Phone Number
 
 //Given a string containing digits from 2-9 inclusive, return all possible 
 //letter combinations that the number could represent. Return the answer in any order.
@@ -14,13 +14,26 @@ gef  jkl  mno
 pgrs tuv wxyz
 */
 
+/*
+Explanation:
+ Initially we'll add an empty string in the vector.
+ Then we keep adding all the alphabets mapped to the corresponding digit to all the strings present in the answer vector and store them in a new vector.
+ Then we copy the value of the new vector to the answer vector.
+ Similarly we traverse all the digits of the in put till we get an answer.
+ 
+ Eg. n=23
+ Initially: [""]
+ 1st iteration: ["a","b","c"]
+ 2nd iteration: ["ad", "bd, "cd", "ae", "be", "ce", "af", "bf", "cf"]
+*/
 class Solution {
 public:
     vector<string> letterCombinations(string digits) {
-        
+     
         string map[]= {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         
         vector<string> ans;
+     
         if(digits== "")
             return ans;
         
