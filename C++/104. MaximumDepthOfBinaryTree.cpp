@@ -1,5 +1,7 @@
 /*Leetcode Problem #104- Maximum Depth of Binary tree*/
 
+/*Finding the height/depth of a binary tree or simply calculating the number of generations/levels from the root node to the leaf nodes.*/
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
