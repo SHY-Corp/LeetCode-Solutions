@@ -1,27 +1,33 @@
 /* Program name :- Reverse_Integer.cpp
- this program will receive any 3 digit number whether it is positive or negative and convert it into its reversed form or reverse its digits ,
- and this program also works if the situation overflows.
+ Given a 32-bit signed integer, reverse digits of an integer.
+
+Note:
+Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−2^31,  2^31 − 1]. 
+For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
+ Example 1:
+
+Input: x = 123
+Output: 321
+
+Example 2:
+
+Input: x = -123
+Output: -321
 */
 
 
-public class Solution {
-
-     public static int reverse(int x) {
-            int ret = 0;
-            boolean zero = false;
-            while (!zero) {
-                ret = ret * 10 + (x % 10);
-                x /= 10;      
-                if(x == 0){
-                    zero = true;
-                }
+class Solution {
+public:
+     static int reverse(int x) {
+            long ret = 0;
+            while (x) {
+                    ret = ret * 10 + (x % 10);
+                    x /= 10;      
             }
-            return ret;   
+            if(ret>INT_MAX || ret<INT_MIN)
+                 ret=0;
+      
+            return (int)ret;   
         }
 
-    public static void main(String[] args) {
-        int s = 1000000003;
-        System.out.println(reverse(s));
-    }
-
-}
+};
