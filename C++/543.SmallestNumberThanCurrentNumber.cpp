@@ -1,7 +1,17 @@
-//This program gives the number of smallest numbers in the given array.
-//It uses binary search tree.
-//Here we traverse the input array from the ending to the beginning and add the elements into the BST.
+//Issue Number 543
+/**
+Problem:
+This program gives the smallest number of numbers than the current number in the given array. 
 
+Approach:
+To solve the problem  simple Binary Search Tree with 2 extra fields is used: 
+1) to hold the elements on the left side of a node.
+2) to store the frequency of element. 
+
+In this approach, we traverse the input array from the ending to the begging and add the elements into the BST. 
+While inserting the elements to the BST, we can compute the number of elements which are lesser elements simply by computing the sum of frequency of the element and the number of elements to the left side of current node, 
+if we are moving to right side of the current node.
+**/
 #include <bits/stdc++.h>
 using namespace std;
 
