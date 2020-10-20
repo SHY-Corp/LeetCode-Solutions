@@ -1,0 +1,22 @@
+//ISSUE NUMBER #677
+// SUM OF TWO NUMBERS
+//PROGRAM-
+
+#include <iostream>
+using namespace std;
+typedef long long int ll;
+
+
+int main()
+{
+     ios_base::sync_with_stdio(false);
+	 cin.tie(NULL);
+	 cout.tie(NULL);
+	ll a,b;
+	cout<<"ENTER NUMBERS="<<endl;
+	cin>>a>>b;
+	ll sum=0;
+	sum=a+b;
+	cout<<"SUM of "<<a<<" and "<<b<<" = "<<sum<<endl;
+	return 0;
+} 
