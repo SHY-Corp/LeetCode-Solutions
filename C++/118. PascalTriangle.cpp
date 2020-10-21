@@ -1,42 +1,24 @@
 // Pascal's Triangle 
 /*
-    Pascal’s triangle is an array of binomial coefficients. The top row is numbered as n=0, 
-    and in each row are numbered from the left beginning with k = 0. 
-    Each number is found by adding two numbers which are residing in the previous row and exactly top of the current cell. 
-    It is also being formed by finding (𝑛𝑘) for row number n and column number k.
+    Approach - If we have the row of Pascal's triangle, we can easily compute the next row by each pair of adjacent values. 
+    Algorithm - Pascal's triangle can be classified as dynamic programming because we construct each row based on the previous row.
+    First, we generate the overall triangle list, which will store each row as a sublist. Then, we check for the special case of 000, as we would otherwise return [1][1][1]. 
+    If numRows>0numRows > 0numRows>0, then we initialize triangle with [1][1][1] as its first row, and proceed to fill the rows. 
 */
 
-#include<iostream>
-using namespace std;
- 
-// Function to print the Pascal's Triangle
-void print_pascal(int row_num){
- 
-    // Loop to print each row
-    for(int n = 1; n <= row_num; n++){
- 
-        for(int r = 1; r < row_num-n+1; r++)
-            cout<<"  ";
- 
-        int val = 1;
-        for(int r = 1; r <= n; r++){
-            cout<<val<<"   ";
-             
-            val = val * (n - r)/r;
+class Solution {
+public:
+    vector<vector<int>> generate(int numRows) {
+        vector<vector<int>> ret;
+        ret.reserve( numRows );
+        for (int n=0; n<numRows; n++) {
+            vector<int> row = {1};              // n choose 0
+            row.reserve( n+1 ); 
+            for (int k=1; k<=n; k++) {
+                row.push_back( row.back() * (n + 1 - k)/k );
+            }
+            ret.push_back(row);
         }
-        cout<<endl;
+        return ret;
     }
-}
- 
-int main(){
-    
-    // Number of rows for Pascal's Triangle
-    int row_num ;
-    cout << "Enter Number of Rows: ";
-    cin >> row_num ;
- 
-    //Function call to print Pascal's Triangle
-    print_pascal(row_num);
- 
-    return 1;
-}
+};
