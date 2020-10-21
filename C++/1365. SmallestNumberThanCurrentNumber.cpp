@@ -1,4 +1,3 @@
-//Issue Number 543
 /**
 Problem:
 This program gives the smallest number of numbers than the current number in the given array. 
