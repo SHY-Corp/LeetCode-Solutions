@@ -1,3 +1,14 @@
+/**
+* link: https://leetcode.com/problems/graph-connectivity-with-threshold/
+* Problem description:
+* Given a graph with n cities
+* two cities x and y are directly connected if
+* x and y share a common divisor strictly greater than
+* some threshold
+* the problem is to answer queries of the type is city a connected to b
+* given all conditions already mentioned
+* Don't forget cities may be connected but not directly
+*/
 class Solution {
 public:
 
