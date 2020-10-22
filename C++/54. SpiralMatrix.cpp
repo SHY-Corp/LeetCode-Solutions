@@ -1,65 +1,43 @@
-// https://leetcode.com/problems/spiral-matrix/
-// Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
-
-/* Sample input : 
- [
- [ 1, 2, 3 ],
- [ 4, 5, 6 ],
- [ 7, 8, 9 ]
-]
-
-Sample output :
-[1,2,3,6,9,8,7,4,5]
-*/
-
 class Solution {
 public:
-    vector<int> spiralOrder(vector<vector<int>>& matrix) {
-        
-        //number of rows
-        int m = matrix.size();
-        
-        vector<int>v;
-        
-        if(m==0)return v;
+    vector<int>spiralOrder(vector<vector<int>>& matrix) {
+        vector<int>ans;
+        int r=matrix.size();
+        if(r==0)
+            return ans;
+        int c=matrix[0].size();
 
-        //number of cols
-        int n = matrix[0].size();
-       
-        int i = 0;
-        int j = 0;
-
-        //loop to print in spiral fashion
-        while(i<m && j<n){
-            for(int l = j; l < n; l++)
+        if((c==0))
+            return ans;
+        int rowst=0;
+        int colst=0;
+        int rowend=r-1;
+        int colend=c-1;
+        while(rowst<=rowend&&colst<=colend)
+        {
+            for(int i=colst;i<=colend;i++)
             {
-                v.push_back(matrix[i][l]);
+                ans.push_back(matrix[rowst][i]);
             }
-            i++;
-            
-            for(int r = i; r < m; r++)
+            rowst++;
+            for(int i=rowst;i<=rowend;i++)
             {
-                v.push_back(matrix[r][n-1]);
+                ans.push_back(matrix[i][colend]);
             }
-            n--;
-            
-            if(j < n && i < m)
+            colend--;
+            if(rowst<=rowend)
             {
-                for(int l = n-1 ;l >= j; l--)
-                {
-                    v.push_back(matrix[m-1][l]);
-                }
-                m--;
-                
-            
-                for(int r = m-1; r >=i; r--)
-                {
-                    v.push_back(matrix[r][j]);
-                }
-                j++;
+                for(int i=colend;i>=colst;i--)
+                    ans.push_back(matrix[rowend][i]);
             }
-            
+            rowend--;
+            if(colst<=colend)
+            {
+                for(int i=rowend;i>=rowst;i--)
+                    ans.push_back(matrix[i][colst]);
+            }
+            colst++;
         }
-        return v;
+        return ans;
     }
 };
