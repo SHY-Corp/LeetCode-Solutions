@@ -17,22 +17,26 @@ struct Node {
 void print_zigzag(Node* root){
     if (!root)
         return;
-    
+    // making two stacks to print the cirrent one and store the childs of the current node acc to direction
     stack <Node*> current, nextlevel;
     current.push(root);
-    bool option = true;
+    
+    bool direction = true;
+
     while (!current.empty()){
         Node* temp = current.top();
         current.pop();
 
         if (temp){
             cout<<temp->data<<" ";
-        if (option) { 
+        // for print in left to right, and stck is lifo so, first left then right
+        if (direction) { 
             if (temp->left) 
                 nextlevel.push(temp->left); 
             if (temp->right) 
                 nextlevel.push(temp->right); 
             }
+        // else for right to left, therefore first right then left    
         else { 
             if (temp->right) 
                 nextlevel.push(temp->right); 
@@ -40,6 +44,11 @@ void print_zigzag(Node* root){
                 nextlevel.push(temp->left); 
             }  
         }
+        // after every iteration changing the direction and swapping the current stack with the temmp sotred elements
+        if (current.empty()) { 
+            direction = !direction; 
+            swap(current, nextlevel); 
+        } 
     }
 }
 int main()
