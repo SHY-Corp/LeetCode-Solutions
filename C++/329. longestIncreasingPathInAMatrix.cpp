@@ -8,7 +8,7 @@ not allowed).
 class Solution {
 public:
     int dp[1005][1005],n,m;
-    int solve(vector<vector<int>>& matrix,int ii,int jj){
+    int solve(vector<vector<int>>& matrix,int ii,int jj){       // this is the recursive function which is called that runs the dfs in the matrix
         if(dp[ii][jj]!=0){
             return dp[ii][jj];
         }
