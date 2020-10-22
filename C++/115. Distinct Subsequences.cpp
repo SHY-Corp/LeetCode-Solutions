@@ -6,8 +6,6 @@
 * characters without disturbing the relative positions of the remaining characters.
 * (ie, "ACE" is a subsequence of "ABCDE" while "AEC" is not) It's guaranteed the answer fits on a 32-bit signed integer.
 */
-#include<bits/stdc++.h>
-using namespace std;
 class Solution {
 public:
     #define ll long long
