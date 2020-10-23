@@ -11,7 +11,7 @@
         Floyd's Cycle-Finding Algorithm, also known as Tortoise-Hare Algorithm.
     
     This algorithm states that we maintain two pointers, say a slow pointer and a fast pointer, initially pointing to head pointer.
-    The slow pointer moves one step a time and the fast pointer moves two step at a time.
+    The slow pointer moves one step at a time and the fast pointer moves two step at a time.
     
     The idea is simple, while any one of the pointer becomes NULL or the next of fast pointer becomes NULL we loop the linked list.
     If in-case, both the pointer becomes equal, we return true, stating that there is a loop else we return false.
