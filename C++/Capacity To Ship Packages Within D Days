@@ -1,0 +1,33 @@
+class Solution {
+public:
+    int shipWithinDays(vector<int>& weights, int D) {
+        int len=weights.size();
+        int num=0,sum=0;
+        for(int i=0;i<len;i++){
+            if(weights[i]>num)num=weights[i];
+        }
+        while(true){
+            sum=0;
+            int b=weights[0];
+            for(int i=1;i<len;i++){
+                if(b+weights[i]<=num)b+=weights[i];
+                else{
+                    b=weights[i];
+                    sum++;
+                    if(sum>D){
+                        num++;
+                        break;
+                    }
+                }
+                                 if(i==len-1){
+                    sum++;
+                    if(sum>D){
+                        num++;
+                        break;
+                    }
+                }
+            }
+            if(sum<=D)return num;
+        }
+    }
+};
