@@ -7,10 +7,12 @@ The binary search tree is guaranteed to have unique values.
 class Solution
 {
 public:
+    // Create a variable sum which will store the result
     int sum = 0;
 
     int rangeSumBST(TreeNode *root, int L, int R)
     {
+        // postorder traversal will compute the sum
         postOrderTraversal(root, L, R);
         return sum;
     }
@@ -20,9 +22,14 @@ public:
         if (root == nullptr)
             return;
 
+        // compute left subtree's value
         postOrderTraversal(root->left, L, R);
-        postOrderTraversal(root->right, L, R);
 
+        // compute right subtree's value
+        postOrderTraversal(root->right, L, R);
+        
+        // if L <= node's value <= R then only add it to sum
+        // otherwise do nothing
         if (root->val >= L && root->val <= R)
             sum += root->val;
     }
