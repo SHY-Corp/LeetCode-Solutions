@@ -1,3 +1,17 @@
+/*Problem statement:
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+
+push(x) -- Push element x onto stack.
+pop() -- Removes the element on top of the stack.
+top() -- Get the top element.
+getMin() -- Retrieve the minimum element in the stack.
+*/
+
+/*
+Approach:
+ We use a basic approach of storing the minimum element in another stack, and updating accordingly as we push and pop.
+ */
+
 class MinStack {
 public:
     /** we use a basic extra stack approach for managing the min element in the stack */
