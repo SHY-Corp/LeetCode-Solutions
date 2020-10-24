@@ -5,13 +5,13 @@ using namespace std;
 vector<vector<int>> diagonalSort(vector<vector<int>>& mat) {
     int n = mat.size(), m = mat[0].size();
     
-    */
     
-   -> get the diagonal of each column for the first row
-   -> sort the diagonal and put back into the matrix diagonal
-   -> get the diagonal of each row for the first column
-   -> sort the diagonal and put back into the matrix diagonal
-    /*
+    
+   //-> get the diagonal of each column for the first row
+   //-> sort the diagonal and put back into the matrix diagonal
+   //-> get the diagonal of each row for the first column
+   //-> sort the diagonal and put back into the matrix diagonal
+   
     for(int i = 0; i < n; i++) {
         int ci = i, cj = 0;
         vector<int> v;
