@@ -22,7 +22,6 @@ public class Panagram_Check {
 			if (ch >= 'a' && ch <= 'z')
 				visit[ch - 'a'] = true;
 		}
-
 		for (int i = 0; i < visit.length; i++)
 			if (!visit[i])
 				return false;
