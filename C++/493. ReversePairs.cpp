@@ -24,12 +24,12 @@
 		Let's say we have an array A={8,4,3,2,1}
 		
 					8,4,3,2,1
-					/		\
+					/	\
 				8,4          3,2,1
-				/  \  		/	  \
-				8   4		3		2,1
-									/	\
-									2	1
+				/  \  	     /	  \
+				8   4	    3	  2,1
+						/	\
+						2	1			
 									
 		As we can see in the above representation, we divided the array from the middle until we are left with no element.
 		
