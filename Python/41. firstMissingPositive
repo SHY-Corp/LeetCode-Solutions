@@ -1,8 +1,0 @@
-class Solution:
-    def firstMissingPositive(self, nums: List[int]) -> int:
-        smallest = 1
-        while True:
-            if smallest in nums:
-                smallest += 1
-            else:
-                return smallest
