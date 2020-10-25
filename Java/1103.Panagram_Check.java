@@ -1,5 +1,3 @@
-package DSA_450_PROBLEMS.Array;
-
 // A pangram is a sentence containing every letter in the English Alphabet.
 // We use indexing of all characters where we considering upper & lower cases same!
 
