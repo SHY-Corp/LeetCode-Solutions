@@ -1,4 +1,5 @@
-# 1119. This program removes the vowels from a given string
+# 1119. Remove vowels from strings
+# This program removes the vowels from a given string
 #
 # Example: given 'Hello world', the program returns 'Hll wrld'
 
