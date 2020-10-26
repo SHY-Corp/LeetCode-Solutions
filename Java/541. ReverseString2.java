@@ -10,20 +10,20 @@ Output: "bacdfeg"
 
 class Solution {
     public String reverseStr(String s, int k) {
-        char[] ch = s.toCharArray();
+        char[] ch = s.toCharArray(); // converting string to character array as strings are immutable
         
-        for(int start = 0; start<ch.length; start += 2*k){
-            int i = start, j = Math.min(start+k-1, ch.length-1);
-            
+        for(int start = 0; start<ch.length; start += 2*k){ // start += 2*k -> since we are only allowed to reverse every k characters in 2k characters
+            int i = start, j = Math.min(start+k-1, ch.length-1); /* defining our start and end point. j -> if after reversing k characters in 2k characters, if the 
+                                                                  length of string is less than k, j -> ch.length-1 otherwise j -> start+k-1; */
             while(i<j){
                 char temp = ch[i];
-                ch[i++] = ch[j];
+                ch[i++] = ch[j]; // simple reversing 
                 ch[j--] = temp;
                 
             }
         }
         
-        return new String(ch);
+        return new String(ch); // converting back to string
     }
         
 }
