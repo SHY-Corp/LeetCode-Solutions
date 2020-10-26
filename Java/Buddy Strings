@@ -1,4 +1,4 @@
-Given two strings A and B of lowercase letters, return true if you can swap two letters in A so the result is equal to B, otherwise, return false.
+/*Given two strings A and B of lowercase letters, return true if you can swap two letters in A so the result is equal to B, otherwise, return false.
 
 Swapping letters is defined as taking two indices i and j (0-indexed) such that i != j and swapping the characters at A[i] and A[j]. For example, swapping at indices 0 and 2 in "abcd" results in "cbad".
 
@@ -33,165 +33,85 @@ Constraints:
 
 0 <= A.length <= 20000
 0 <= B.length <= 20000
-A and B consist of lowercase letters.
+A and B consist of lowercase letters.*/
 
-1
 class Solution {
-2
     public boolean buddyStrings(String A, String B) {
-3
         
-4
         int pos1=0,pos2=0,count=0;
-5
         if(A.length()!=B.length())
-6
          return false;
-7
         for(int i=0;i<A.length();i++)
-8
         {
-9
           if(A.charAt(i)!=B.charAt(i))  
-10
           {
-11
               if(count==0)
-12
               {
-13
                   pos1=i;
-14
                   count++;
-15
                }
-16
               else
-17
               {
-18
                   pos2=i;
-19
                   count++;
-20
                   break;
-21
                 }
-22
           }
-23
           }
-24
         boolean b;
-25
         if(count==2)
-26
         {
-27
        
-28
         if(pos2==A.length()-1)    
-29
         {
-30
            
-31
             if(pos1+1!=pos2)
-32
           A=A.substring(0,pos1)+Character.toString(A.charAt(pos2))+A.substring(pos1+1,pos2)+ Character.toString(A.charAt(pos1));
-33
             else
-34
              A=A.substring(0,pos1)+Character.toString(A.charAt(pos2))+ Character.toString(A.charAt(pos1));   
-35
        
-36
           
-37
         }
-38
             else
-39
             {
-40
                 
-41
                  if(pos1+1!=pos2)
-42
                 A=A.substring(0,pos1)+Character.toString(A.charAt(pos2))+A.substring(pos1+1,pos2)+ Character.toString(A.charAt(pos1))+A.substring(pos2+1);
-43
                 else
-44
                    A=A.substring(0,pos1)+Character.toString(A.charAt(pos2))+Character.toString(A.charAt(pos1))+A.substring(pos2+1);  
-45
                 
-46
         }
-47
          b=A.equals(B);  
-48
          
-49
       }
-50
        else 
-51
        if(count==1)
-52
        {
-53
         b=false;
-54
        }
-55
         
-56
       else
-57
       {
-58
           if(A.length()<2)
-59
           {
-60
              b=false;
-61
           }
-62
           else
-63
           {
-64
               b=false;
-65
               loop:
-66
            for(int i=0;i<A.length();i++)
-67
                for(int j=i+1;j<A.length();j++)
-68
                if(A.charAt(i)==A.charAt(j))
-69
                {
-70
                    b=true;
-71
                    break loop;
-72
                 }
-73
           }
-74
       }
-75
        
-76
         
-77
       return b;  
-78
         
-79
     }
-80
 }
