@@ -1,4 +1,8 @@
 class Solution {
+    /**CLimbing Stairs leetcode java problem
+        You are climbing a stair case. It takes n steps to reach to the top.
+        Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+     */
     public int climbStairs(int n) {
         //Checks if there is only one stair in which case there is only one way to climb the stair
         if (n == 1) return 1;
