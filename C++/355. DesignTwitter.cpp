@@ -75,14 +75,14 @@ public:
               
         }
         
-        int k=0;
+        int k=10;// Here i have to change the value of K change the number of most recent tweets
         
         // Most recent 10 tweets
-        while(!q.empty() && k<10)
+        while(!q.empty() && k>0)
         {
             ans.push_back(q.top().second);
             q.pop();
-             k++;
+             k--;
         }
         return ans;
         
