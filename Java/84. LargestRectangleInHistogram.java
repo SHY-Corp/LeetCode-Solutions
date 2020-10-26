@@ -1,9 +1,13 @@
+// Explaination - for any index i we will take help of array nser and array nsel to find the next smaller element to the right and next smaller element to the left
+// respectively. One we get those tho value for a particular index i, we will find the width as nser[i]-nsel[i]-1; Since we have the height already as heights[i]
+// widht, we can find the area;
+// Prerequisite - Next greater/smaller element on the left/right;
 class Solution {
     public int largestRectangleArea(int[] heights) {
         if(heights.length == 0){
             return 0;
         }
-        int[] nser = new int[heights.length];
+        int[] nser = new int[heights.length]; // array contains next smaller element to the right
         Stack<Integer> st = new Stack<>();
         
         st.push(heights.length-1);
@@ -22,7 +26,7 @@ class Solution {
             st.push(i);
         }
         
-        int[] nsel = new int[heights.length];
+        int[] nsel = new int[heights.length]; // array contains next smaller element to the left
         st = new Stack<>();
         
         st.push(0);
