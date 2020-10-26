@@ -1,0 +1,32 @@
+/* C++ program to create multiple objects of a class */
+#include <iostream>
+#include <string>
+using namespace std;
+// class definition
+// "student" is a class
+class employee {
+public: // Access specifier
+int id;
+string Name;
+string Place;
+};
+int main()
+{
+// multiple object creation
+employee emp1, emp2;
+// Accessing attributes and setting the values
+emp1.id = 101;
+emp1.Name = "Abhimanyu";
+emp1.Place = "Delhi";
+emp2.id = 202;
+emp2.Name = "Jerry";
+emp2.Place = "Noida";
+// Printing the values
+cout << "ID: " << emp1.id << "\n";
+cout << "Name: " << emp1.Name << "\n";
+cout << "Place: " << emp1.Place << "\n";
+cout << "ID: " << emp2.id << "\n";
+cout << "Name: " << emp2.Name << "\n";
+cout << "Place: " << emp2.Place << "\n";
+return 0;
+}
