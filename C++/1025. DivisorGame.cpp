@@ -11,8 +11,14 @@ Return True if and only if Alice wins the game, assuming both players play optim
 
 class Solution {
 public:
+    
     bool divisorGame(int N) {
-        if(N % 2 == 0) return true; //if Alice receives an even number: Bob will always receive an odd number and will lose the game
-        else return false; //if Alice receives an odd number: Bob will always receive an even number and will win the game
+        if(N % 2 == 0) return true;
+        //if Alice receives an even number: Bob will always receive an odd number and will lose the game
+        else
+            return false; 
+        
+        
+        //if Alice receives an odd number: Bob will always receive an even number and will win the game
     }
 };
