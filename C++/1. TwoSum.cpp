@@ -11,9 +11,9 @@ public:
             
             for(int j=1; j<nums.size(); j++) {        //inner loop  1 --> size of vector nums
                 
-                if(nums[i]+nums[j]==target && i!=j)   
+                if(nums[i]+nums[j] == target && i!=j)   
                     return vector<int> {i,j};         // return vector of i and j if condition satisfies
-                    
+  
             }
         }
         return {};   // return empty vector if condition fails for every element
