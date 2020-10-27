@@ -3,16 +3,29 @@
 
 class Solution {
 public:
-    int heightChecker(vector<int>& heights) {
-        vector<int>arr;
-        int count=0;
-        int n=heights.size();
-        arr.assign(heights.begin(),heights.end());
-        sort(heights.begin(),heights.end());
-        for(int i=0;i<n;i++){
-            if(arr[i]!=heights[i])
-                count++;
+        int heightChecker(vector<int>& heights) {
+        if (heights.size()<2)
+            return 0;
+        
+        vector<int> map(101,0);
+        
+        for (int h:heights)
+            map[h]++;
+        
+        int res = 0;
+        int h_ptr = 1;
+        
+        for (int h:heights)
+        {
+            while (map[h_ptr]==0)
+                h_ptr++;
+            
+            if (h != h_ptr)
+                res++;
+            
+            map[h_ptr]--;
         }
-        return count;
+        
+        return res;
     }
 };
