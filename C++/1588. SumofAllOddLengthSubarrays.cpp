@@ -18,15 +18,12 @@
 class Solution {
 public:
     int sumOddLengthSubarrays(vector<int>& arr) {
-        long long sum=0;
-        int n= arr.size();
-        for(int win = 1; win<=n ; win+=2){
-            for(int i=0; i < n-win+1; i++){
-                for(int j=i; j<i+win; j++){
-                    sum += arr[j];
-                }
-            }
+        int ans = 0,n=arr.size(),i;
+        for(i =0;i<n;i++)
+		{
+            int contribution = ceil((i+1)*(n-i)/2.0);
+            ans+=(contribution*arr[i]);
         }
-        return sum;
+        return ans;
     }
 };
