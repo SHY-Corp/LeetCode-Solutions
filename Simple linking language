@@ -1,0 +1,16 @@
+int main()
+
+{
+
+   char sentence[1000];
+
+   FILE *fptr;
+
+   FILE *fptr;
+
+   ptr = fopen("program.txt", "w");
+
+   if(fptr == NULL)
+
+   {
+
