@@ -8,4 +8,4 @@ class Solution:
                     current =paths[l][0]
                     if p==current:
                         p=paths[l][1]
-        return p                
+        return p   #Return the destination city, that is, the city without any path outgoing to another city.             
