@@ -8,9 +8,7 @@
 //If there is a tie for most frequent element, the element closest to the top of the stack is removed and returned.
 
 
-#include <bits/stdc++.h>
 
-using namespace std;
 
 
 class FreqStack {
@@ -45,19 +43,3 @@ public:
  * obj->push(x);
  * int param_2 = obj->pop();
  */
-
-
-int main() {
-
-
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
-
-    FreqStack* obj = new FreqStack();
-    obj->push(5);
-    cout << obj->pop()<<endl;
-
-
-
-}
