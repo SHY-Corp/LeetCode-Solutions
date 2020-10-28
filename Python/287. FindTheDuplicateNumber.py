@@ -5,7 +5,7 @@ class Solution(object):
     def findDuplicate(self, nums):
         #Traversing the list using for loop
         s = sorted(nums)      #sorting given array
-        a,b = (0),len(nums)
+        a,b = 0,len(nums)
         temp=(a+b)//2
         t = 1
         while t:              #using binary search to find duplicate
