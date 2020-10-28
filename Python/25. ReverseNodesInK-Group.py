@@ -1,26 +1,22 @@
-from math import gcd
-l=[]
-dp=[]
-n=-1
-def solve(index,gcd_):
-    global dp
-    global l
-    global n
-    if index==n:
-        if gcd_==1:
-            return 1
-        return 0
-    if dp[index][gcd_]==-1:
-        dp[index][gcd_]=solve(index+1,gcd_)+solve(index+1,gcd(gcd_,l[index]))
-    return dp[index][gcd_]
-for _ in range(int(input())):
-    n=int(input())
-    l=list(map(int,input().split()))
-    ans=0
-    dp=[[-1 for i in range(10001)]for i in range(n+1)]
-    for i in range(n):
-        ans+=solve(i+1,l[i])
-    print(ans)
-            
-            
-    
+"""
+25. Reverse Nodes in K-Group
+
+The program uses a variable(finchk) to check if there are enough(k) nodes remaining to reverse.
+If so, it reverses connection(k-1) between each pair of nodes(k) and moves to next group.
+If not, it returns the current linked list as answer.
+"""
+
+class Solution:
+    def reverseKGroup(self, head: ListNode, k: int) -> ListNode:
+        dummy, dummy.next = ListNode(0), head
+        prev, cur = dummy, dummy.next
+        finchk = cur
+        
+        while 1:
+            for _ in range(k):
+                if not finchk: return dummy.next
+                finchk = finchk.next
+            for _ in range(k-1):
+                cur.next.next, cur.next, prev.next = prev.next, cur.next.next, cur.next
+            prev, cur = cur, cur.next
+        return dummy.next
