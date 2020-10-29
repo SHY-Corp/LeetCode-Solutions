@@ -1,0 +1,47 @@
+class Solution {
+public:
+    vector<string > ans;
+   
+   
+    
+    void solve(string &s,string temp,int c,int i)
+    {
+        if(c==4)
+        {
+            string t=s.substr(i, s.length()-i);
+            if(t.length()==0 || t.length()>=4 || stoi(t)>255 
+                    || (t.length()!=1 && t[0]=='0'))
+                return;
+            temp+=t;
+            
+            ans.push_back(temp);
+            
+                return;
+        }
+        
+        for(int j=i;j<s.length();j++)
+        {
+            string t=s.substr(i,j-i+1);
+            
+            if(t.length()>=4 || t.length()==0 || stoi(t)>255 || 
+                    (t.length()!=1 && t[0]=='0'))
+                
+            { return;}
+            
+            
+            
+            temp+=t;
+            int p=t.length()+1;
+            temp.push_back('.');
+            solve(s,temp,c+1,j+1);
+            while(p--)
+                temp.pop_back();
+        }
+    }
+    
+    vector<string> restoreIpAddresses(string s) {
+        solve(s,"",1,0);
+        return ans;
+    }
+};
+
