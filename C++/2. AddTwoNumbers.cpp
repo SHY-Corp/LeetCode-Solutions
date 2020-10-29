@@ -3,34 +3,31 @@
  * struct ListNode {
  *     int val;
  *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        int s=0,c=0;
-        ListNode*head=new ListNode(0);
-        ListNode*te=head;
-        
-        while(l1||l2)
-        {
-            s=((l1)?l1->val:0)+((l2)?l2->val:0)+c;
-           te->next=new ListNode(s%10);
-            te=te->next;
-            
-            c=s/10;
-            if(l1)
-            l1=l1->next;
-            if(l2)
-            l2=l2->next;
+        ListNode* dummy=new ListNode(0);
+        ListNode* p=l1,*q=l2,*curr=dummy;
+        int carry=0;
+        while(p!=NULL || q!=NULL){
+            int x=(p!=NULL)?p->val:0;
+            int y=(q!=NULL)?q->val:0;
+            int sum=x+y+carry;
+            carry=sum/10;
+            curr->next=new ListNode(sum%10);
+            curr=curr->next;
+            if(p!=NULL)
+                p=p->next;
+            if(q!=NULL)
+                q=q->next;
         }
-        while(c)
-        {
-            te->next=new ListNode(c%10);
-            c=c/10;
-            te=te->next;
-        }
-        return head->next;
+        if(carry>0)
+            curr->next=new ListNode(carry);
+        return dummy->next;
     }
 };
