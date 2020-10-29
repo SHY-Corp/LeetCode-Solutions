@@ -11,32 +11,28 @@ if n = 2,
 the sequence is 11.
 */
 
-string Solution::countAndSay(int A) {
-    string result = "";
-
-    if(!A)
-        return result;
-
-    string str = "1";
-    int cnt = 1;
-
-    for (int i = 1; i<A; ++i)
-    {
-        int len = str.length();
-        for(int j = 0; j<len; ++j)
-        {
-            if (j+1 != len && str[j]==str[j+1])
-            {
-                ++cnt; 
+class Solution {
+public:
+    string countAndSay(int n) {
+        string s="1";
+        for(int i=1;i<n;i++){
+            vector<pair<int,int> > num;
+            num.push_back(make_pair(s[0]-'0',1));
+            int x=0;
+            for(int j=1;j<s.length();j++){
+                if(s[j-1]==s[j])
+                    num[x].second++;
+                else{
+                    x++;
+                    num.push_back(make_pair(s[j]-'0',1));
+                }
             }
-            else
-            {
-                result += to_string(cnt) + str[j];
-                cnt = 1;
+            s="";
+            for(int j=0;j<num.size();j++){
+                s.push_back(num[j].second + '0');
+                s.push_back(num[j].first + '0');
             }
         }
-        str = result;
-        result.clear();
+        return s;
     }
-    return str;
-}
+};
