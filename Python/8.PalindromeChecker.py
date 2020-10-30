@@ -18,10 +18,5 @@ class Solution(object):
 
         if finalStr == str:  # This part checks if the final reversed string is eqaul to the original string or not.
             return True 
-
         else:
             return False
-        
-
-
-
