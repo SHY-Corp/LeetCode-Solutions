@@ -1,0 +1,17 @@
+class Palindrome{  
+ public static void main(String args[]){  
+  int a,sum=0,t;    
+  int n=454;  
+  
+  t=n;    
+  while(n>0){    
+   r=n%10;   
+   sum=(sum*10)+a;    
+   n=n/10;    
+  }    
+  if(t==sum)    
+   System.out.println("palindrome number ");    
+  else    
+   System.out.println("not palindrome");    
+}  
+}  
