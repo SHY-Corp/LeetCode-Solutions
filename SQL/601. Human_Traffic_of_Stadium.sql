@@ -1,3 +1,6 @@
+# SQL query to display the records with three or more rows with consecutive id's, and the number of people is greater than or equal to 100 for each.
+# Returned table is ordered by visit_date in ascending Order
+
 select id, visit_date,people from (select
 *
 ,lead(id,1) over(order by visit_date asc) as id1
