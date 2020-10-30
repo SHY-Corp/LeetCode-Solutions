@@ -1,3 +1,7 @@
+"""
+This program takes merges two sorted lists
+"""
+
 class Solution(object):
     def mergeTwoLists(self, l1, l2):
         if not l1 and not l2:
