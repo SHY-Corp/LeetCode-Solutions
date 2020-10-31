@@ -1,0 +1,42 @@
+#include<bits/stdc++.h> 
+using namespace std; 
+  
+int bulb_on(int a[],int n) 
+{ 
+    int count = 0; 
+  
+    int res = 0; 
+    for(int i = 0; i < n; i++) 
+    { 
+        if (a[i] == 1 && count % 2 == 0) 
+            continue;
+        else if(a[i] == 0 && count % 2 != 0) 
+            continue; 
+        else if(a[i] == 1 && count % 2 != 0) 
+        { 
+            res++; 
+            count++; 
+        } 
+        else if (a[i] == 0 && count % 2 == 0) 
+        { 
+            res++; 
+            count++; 
+        } 
+    } 
+    return res; 
+} 
+  
+int main() 
+{ 
+    cout<<"Enter the number of bulbs\n";
+    int n;
+    cin>>n;
+    int states[n],i;
+    cout<<"Enter the state of each bulb\n";
+    for(i=0;i<n;i++)
+    {
+       cin>>states[i];
+    }
+    cout<<"The minimum number of switches needed are "<<bulb_on(states,n); 
+} 
+  
