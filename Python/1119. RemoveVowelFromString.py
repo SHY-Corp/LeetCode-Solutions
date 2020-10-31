@@ -10,6 +10,6 @@ class Solution(object):
 
         for s in string:
             if s.lower() not in vowels:
-                new_string += s
+                 new_string += s
 
         return new_string
