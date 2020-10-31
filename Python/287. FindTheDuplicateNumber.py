@@ -1,9 +1,18 @@
 #Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
 #There is only one duplicate number in nums, return this duplicate number.
 class Solution(object):
+
     def findDuplicate(self, nums):
-        #Traversing the list using for loop 
-        for i in nums:
-            #If the count of the number is more than one then the number is duplicate and is returned
-            if(nums.count(i) > 1):
-                return i
+        #Traversing the list using for loop
+        s = sorted(nums)      #sorting given array
+        a,b = 0,len(nums)
+        temp=(a+b)//2
+        t = 1
+        while t:              #using binary search to find duplicate
+            if s[temp] == temp and s[temp-1] == temp:
+                return s[temp]
+            if s[temp] == temp+1 and s[temp-1] == temp:
+                a = temp
+            else:
+                b = temp
+            temp = (a+b)//2
