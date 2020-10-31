@@ -16,7 +16,7 @@ Given a positive integer n. Return True if and only if Alice wins the game other
 Approach: As alice is starting the game and Bob is playing optimally, alice has to make a move such that in the next move Bob looses. 
 As both play optimally, if Alice looses in any move that should be the move of Bob. So we should give the move to Bob wre Alice looses. 
 
-We can use DP and store the values were alice wins and looses. At any particular point we have to choose a number such that of remaining numbers Bob looses as it is his turm.
+We can use DP and store the values were alice wins and looses. At any particular point we have to choose a number such that of remaining numbers Bob looses as it is his turn.
 
 */
 
