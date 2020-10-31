@@ -43,36 +43,45 @@ class Solution {
     
 public:
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
-        sort(nums.begin(), nums.end());
-        vector<vector<int>> A;
-        vector<int> tempA;
-        int size=nums.size();
+        vector<vector<int>> ans;
         
-        if(size>=4){
-            for(int i=0; i<size-3; i++){
-                for(int j=i+1; j<size-2; j++){
-                    int tempTarget=target-(nums[i]+nums[j]);
-                    int left=j+1, right=size-1;
-                    while(left<right){
-                        int sum=nums[left]+nums[right];
-                        if(sum==tempTarget){
-                            tempA.push_back(nums[i]);
-                            tempA.push_back(nums[j]);
-                            tempA.push_back(nums[left]);
-                            tempA.push_back(nums[right]);
-                            A.push_back(tempA);
-                            while((left<right) && (nums[left]==tempA[2])) left++;
-                            while((left<right) && (nums[right]==tempA[3])) right--;
-                            tempA.clear();
-                        }
-                        else if(sum>tempTarget) right--;
-                        else left++;
+        if(nums.empty())
+            return ans;
+       
+        int n= nums.size();
+        
+        sort(nums.begin(), nums.end());
+        
+        for(int i=0; i<n-3; i++) {
+            for(int j=i+1; j<n-2; j++) {
+                
+                int new_target= target-nums[i]-nums[j];
+                int left=j+1, right= n-1;
+                
+                while(left < right) {
+                    int sum= nums[left]+nums[right];
+                    
+                    if(sum < new_target) left++;
+                    
+                    else if(sum > new_target) right--;
+                    
+                    else {
+                        vector<int> temp(4,0);
+                        temp[0]= nums[i];
+                        temp[1]= nums[j];
+                        temp[2]= nums[left];
+                        temp[3]= nums[right];
+                        ans.push_back(temp);
+                        
+                        while(left < right && nums[left]== temp[2]) left++;
+                        while(left < right && nums[right]== temp[3]) right--;
                     }
-                    while((j+1<size-2) && (nums[j+1]==nums[j])) j++;
                 }
-                while((i+1<size-3) && (nums[i+1]==nums[i])) i++;
+                while(j+1<n && nums[j+1]== nums[j]) j++;
             }
+            while(i+1<n && nums[i+1]== nums[i]) i++;
         }
-        return A;
+        
+        return ans;
     }
 };
