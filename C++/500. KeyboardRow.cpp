@@ -3,6 +3,8 @@
 ** Given a List of words, return the words that can be typed using letters of alphabet on only one row's of American keyboard like the image below.
 ** Input: ["Hello", "Alaska", "Dad", "Peace"]
 ** Output: ["Alaska", "Dad"]
+** Approach: First we check in which line the first character belongs, then we continue to check in that particular line.
+**           If any of the character in that string not found to be matching with that line. we move to look for next string.
 */
 
 class Solution {
