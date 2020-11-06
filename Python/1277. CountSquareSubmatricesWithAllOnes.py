@@ -1,6 +1,6 @@
 # 1277. Count Subsquares with all 1s.
+# It will return the maximum number of square Submattrices formed with all 1s.
 
-# Description:
 # Question_Link : https://leetcode.com/problems/count-square-submatrices-with-all-ones/
 
 
