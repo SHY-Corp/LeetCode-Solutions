@@ -16,9 +16,6 @@
 <img src="https://img.shields.io/github/issues-pr-closed-raw/SSKale1/LeetCode-Solutions?style=for-the-badge" >
 </p>
 <p align="center">
-<img src="https://img.shields.io/github/hacktoberfest/2020/SSKale1/LeetCode-Solutions?style=for-the-badge">
-</p>
-<p align="center">
 <img src="https://img.shields.io/github/contributors/SSKale1/LeetCode-Solutions?style=for-the-badge">
 </p>
 
@@ -46,18 +43,6 @@ Check [Contribution](/CONTRIBUTING.md) Guide Before Contribution.
 
 <!-- Restrctions:maintainers only access -->
 
-<summary><h3>Code Base Details</h3></summary>
-<details>
-
-| Problem #                      	| Title           	| Remarks 	      |
-|---|---|---|
-| 1                  	| Two Sum                  	|   	|
-| 2                    	| Add Two Numbers    	|  	|
-| 3               	| Longest Substring Without Repeating Characters               	|  	|
-
-
-
-</details>
 
 ## Contributing
 
