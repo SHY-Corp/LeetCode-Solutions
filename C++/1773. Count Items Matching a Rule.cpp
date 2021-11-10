@@ -52,26 +52,26 @@ public:
     int countMatches(vector<vector<string>> &items, string ruleKey, string ruleValue)
     {
 
-        int count = 0;
+        int count = 0; // to count the number matching the criteria 
 
-        for (int i = 0; i < items.size(); i++)
+        for (int i = 0; i < items.size(); i++) // simply for loop for traversing 
         {
-            if (ruleKey == "type")
+            if (ruleKey == "type") // if the value "ruleKey" is equal to "type" then code inside if else is executed 
             {
                 items[i][0] == ruleValue ? ++count : count; // ternuary operator used
             }
 
-            else if (ruleKey == "color")
+            else if (ruleKey == "color") // if the value "ruleKey" is equal to "color" then code inside if else is executed 
             {
                 items[i][1] == ruleValue ? ++count : count;
             }
 
-            else
+            else // both of the above doesn't fulfill the criteria then else will executed at last 
             {
                 items[i][2] == ruleValue ? ++count : count;
             }
         }
 
-        return count;
+        return count; //  return the value as "count" as function is of int type 
     }
 };
