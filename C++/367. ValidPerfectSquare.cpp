@@ -1,7 +1,6 @@
 /**
  * @file 367. ValidPerfectSquare.cpp
  * @author Vipul kumar Singh  ((https://github.com/vipul-2003))
- * @brief
  * @version 0.1
  * @date 2021-11-11
  * @link https://leetcode.com/problems/valid-perfect-square/
