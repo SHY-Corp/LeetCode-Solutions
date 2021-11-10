@@ -6,7 +6,6 @@
  * @date 2021-11-09
  * @link https://leetcode.com/problems/count-items-matching-a-rule/
  * @copyright Copyright (c) 2021
- *
  */
 
 /*
