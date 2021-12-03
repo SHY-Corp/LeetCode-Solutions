@@ -1,3 +1,4 @@
+//@brief link to the question [https://leetcode.com/problems/convert-a-number-to-hexadecimal/]
 //Problem 405 - Convert a number to hexadecimal
 
 // Given an integer, write an algorithm to convert it to hexadecimal. 
@@ -35,6 +36,10 @@ Explanation:
     Return the result
 */
 
+
+//First Approach 
+
+/*
 class Solution {
 public:
     vector<char> hex = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
@@ -48,5 +53,43 @@ public:
             n /= 16;
         }
         return result;
+    }
+};
+*/
+
+
+//Second Approach 
+
+
+class Solution
+{
+public:
+    string toHex(int num)
+    {
+        unsigned int number = num; // to manage all the negative numbers
+
+        string ans = ""; // to store the answer
+
+        if (number == 0)
+        {
+            ans = "0";
+        }
+
+        // we could not create until its not required in our program
+        // like we have created const hexadecimal string in else for saving memory
+
+        else
+        {
+            const string hexadecimal = "0123456789abcdef"; // to store hexadecimal numbers
+
+            while (number > 0) // to get the hexadecimal subsiquent of decimal number
+            {
+                int temp = number % 16;
+                ans += hexadecimal[temp];
+                number /= 16;
+            }
+        }
+
+        return {ans.rbegin(), ans.rend()}; // to return the iterator of string with reverse traversing
     }
 };
