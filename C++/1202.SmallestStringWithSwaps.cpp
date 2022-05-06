@@ -66,6 +66,6 @@ public:
 };
 
 /*
-   Time complexity: O(E + V \log V)O(E+VlogV)
-   Space complexity: O(E + V)O(E+V)
+   Time complexity: O(E+VlogV)
+   Space complexity: O(E+V)
 */
